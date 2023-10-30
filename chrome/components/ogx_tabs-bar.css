@@ -42,8 +42,8 @@ toolbar:is(#TabsToolbar) #firefox-view-button:hover .toolbarbutton-icon {
     fill: var(--general-color) !important;
 }
 
-:root:not([privatebrowsingmode="temporary"]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs, 
-:root[privatebrowsingmode="temporary"] :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button)) + #tabbrowser-tabs {
+:root:not([privatebrowsingmode="temporary"]) :is(toolbarbutton, toolbarpaletteitem)+#tabbrowser-tabs,
+:root[privatebrowsingmode="temporary"] :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button))+#tabbrowser-tabs {
     border-inline-start: 0px solid transparent !important;
 }
 
@@ -68,14 +68,19 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 
 /* ------------------------------------- Pestaña activa ------------------------------------- */
 
-.tabbrowser-tab[selected] { z-index: 1 !important; }
+.tabbrowser-tab[selected] {
+    z-index: 1 !important;
+}
 
-.tab-background, .tab-stack::before{ clip-path: polygon(5px 0%, 200% 0%, 0% 200%, 0% 5px); }
+.tab-background,
+.tab-stack::before {
+    clip-path: polygon(5px 0%, 200% 0%, 0% 200%, 0% 5px);
+}
 
-.tab-background[selected]{
-    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)), 
-                      linear-gradient(transparent, transparent), 
-                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+.tab-background[selected] {
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+        linear-gradient(transparent, transparent),
+        var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
     margin-block-start: 1px !important;
     margin-inline: 1px !important;
     box-shadow: none !important;
@@ -83,7 +88,7 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
     border-radius: 0px 2px 0px 0px !important;
 }
 
-.tabbrowser-tab[selected] > .tab-stack::before{
+.tabbrowser-tab[selected]>.tab-stack::before {
     content: "";
     display: -moz-box;
     height: var(--tab-height-personal) !important;
@@ -120,15 +125,16 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 
 /* Color :hover de las pestañas no seleccionadas */
 
-.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected], [multiselected]) {
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
     background-color: color-mix(in srgb, var(--identity-icon-color, var(--general-color)) 25%, transparent) !important;
 }
 
 /* Regla para visualizar mejor el seleccionar varias pestañas */
 
 @media not (-moz-bool-pref:"firefoxgx.tab-shapes") {
-    
-    .tab-background[multiselected]:not([selected="true"]), tab-background:is([multiselected]):not([selected="true"]) .tab-stack {
+
+    .tab-background[multiselected]:not([selected="true"]),
+    tab-background:is([multiselected]):not([selected="true"]) .tab-stack {
         margin-inline: 0px 0px !important;
         background: var(--button-hover-bgcolor) !important;
         outline: none !important;
@@ -149,11 +155,13 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 
 /* Botón "Open Newtab" */
 
-#tabs-newtab-button, #TabsToolbar #new-tab-button {
+#tabs-newtab-button,
+#TabsToolbar #new-tab-button {
     fill: var(--general-color) !important;
 }
 
-#TabsToolbar #tabs-newtab-button image:not(.menu-iconic-icon), #TabsToolbar #new-tab-button image:not(.menu-iconic-icon) {
+#TabsToolbar #tabs-newtab-button image:not(.menu-iconic-icon),
+#TabsToolbar #new-tab-button image:not(.menu-iconic-icon) {
     padding: 3px !important;
     max-height: 22px !important;
     min-height: 22px !important;
@@ -162,7 +170,8 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
     border-radius: 2px !important;
 }
 
-#tabs-newtab-button:hover .toolbarbutton-icon, #TabsToolbar #new-tab-button:hover .toolbarbutton-icon {
+#tabs-newtab-button:hover .toolbarbutton-icon,
+#TabsToolbar #new-tab-button:hover .toolbarbutton-icon {
     background: color-mix(in srgb, var(--general-color) 25%, transparent) !important;
 }
 
@@ -179,7 +188,8 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
     --uc-tabs-scrollbutton-border: 0px !important;
 }
 
-#scrollbutton-up, #scrollbutton-down {
+#scrollbutton-up,
+#scrollbutton-down {
     border-block-width: var(--uc-tabs-scrollbutton-border, 0px) !important;
 }
 
@@ -195,7 +205,7 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 
 /* Quitar label "Navegación Privada" */
 
-#private-browsing-indicator-with-label > label {
+#private-browsing-indicator-with-label>label {
     display: none !important;
 }
 
@@ -207,7 +217,7 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 
 /* Reduce spacing between pinned and regular tabs */
 
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
     margin-inline-start: 0px !important;
 }
 
@@ -223,9 +233,11 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
     text-shadow: none !important;
 }
 
-#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+#TabsToolbar #firefox-view-button[open]>.toolbarbutton-icon,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
     box-shadow: none !important;
 }
+
 /*
 #TabsToolbar{
   --tabs-navbar-shadow-size: 0px !important;
@@ -233,40 +245,66 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 */
 /* Color y posición "dot" de pestaña que necesita atención */
 
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+.tabbrowser-tab>.tab-stack>.tab-content[pinned][titlechanged]:not([selected="true"]) {
     background-image: radial-gradient(circle, var(--general-color), var(--general-color) 2px, transparent 2px) !important;
     background-position: center top calc(0px + var(--tabs-navbar-shadow-size)) !important;
 }
 
-/* ----------------------------------- config to themes that have "IMAGES" --------------------------------------------
-   ------------------------------------------ Compatibilidad parcial -------------------------------------------------- 
+/*----------------------------------- config to themes that have "IMAGES"-------------------------------------------- 
+------------------------------------------ Compatibilidad parcial --------------------------------------------------*/
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab>.tab-stack>.tab-background[multiselected="false"],
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab>.tab-stack>.tab-background[selected="true"] {
+    --lwt-background-alignment: right top, right top, right top !important;
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+        linear-gradient(transparent, transparent), var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+    background-position: right top !important;
+    background-repeat: repeat-x !important;
+    background-size: auto auto !important;
+    background: linear-gradient(to right,
+            rgba(255, 0, 0, 0.3),
+            rgba(255, 154, 0, 0.3),
+            rgba(208, 222, 33, 0.3),
+            rgba(79, 220, 74, 0.3),
+            rgba(63, 218, 216, 0.3),
+            rgba(47, 201, 226, 0.3),
+            rgba(28, 127, 238, 0.3),
+            rgba(95, 21, 242, 0.3),
+            rgba(186, 12, 248, 0.3),
+            rgba(251, 7, 217, 0.3),
+            rgba(255, 0, 0, 0.3)) no-repeat !important;
+}
 
-/* Mantener una imagen al mover pestaña en temas con imagenes - still needs fix 
+/* Mantener una imagen al mover pestaña en temas con imagenes - still needs fix */
 
-:root:is([lwtheme-image], [style*="--lwt-additional-images"]) #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
-    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)), 
-                      linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)), 
-                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+:root:is([lwtheme-image], [style*="--lwt-additional-images"]) #tabbrowser-tabs:is([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab>.tab-stack>.tab-background[selected="true"] {
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+        linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+        var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
     background-position: left center !important;
     background-repeat: no-repeat !important;
     background-size: auto auto !important;
+    background: linear-gradient(to right, rgb(159, 26, 255, 0.3), rgb(159, 26, 255, 0.3), rgb(138, 70, 255, 0.3), rgb(118, 93, 255, 0.3), rgb(93, 125, 255, 0.3), rgb(62, 140, 255, 0.3), rgb(28, 153, 255, 0.3), rgb(0, 165, 255, 0.3), rgb(0, 180, 255, 0.3), rgb(0, 195, 255, 0.3), rgb(0, 208, 255, 0.3), rgb(0, 221, 255, 0.3)) no-repeat !important;
 }
-*/
+
 /* Code to tabs-bar reach lower height that 30px */
 
-#titlebar{ appearance: none !important; }
+#titlebar {
+    appearance: none !important;
+}
 
-.titlebar-buttonbox-container, .tab-close-button, .tab-label-container{
-  max-height: var(--tab-height-personal) !important;
+.titlebar-buttonbox-container,
+.tab-close-button,
+.tab-label-container {
+    max-height: var(--tab-height-personal) !important;
 }
 
 /* My code - Borde redondeado barra de menú */
 
-#main-menubar>menu{
+#main-menubar>menu {
     background-color: transparent !important;
 }
 
-#main-menubar>menu>.menubar-text{
+#main-menubar>menu>.menubar-text {
     padding: 1px 4px 3px 4px !important;
     margin-block-start: 0px !important;
     margin-block-end: 1px !important;
@@ -274,11 +312,12 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
 }
 
 @media (-moz-platform: linux) {
-#main-menubar>menu>.menubar-text{
-    margin-inline: -5px !important;
-    }}
+    #main-menubar>menu>.menubar-text {
+        margin-inline: -5px !important;
+    }
+}
 
-#main-menubar>menu:is(:hover,[open])>.menubar-text {
+#main-menubar>menu:is(:hover, [open])>.menubar-text {
     background-color: var(--button-active-bgcolor) !important;
     color: white !important;
     border-radius: 2px !important;
@@ -292,6 +331,7 @@ toolbar #firefox-view-button[aria-pressed="true"] .toolbarbutton-icon {
     #TabsToolbar {
         padding-block-start: 6px !important;
     }
+
     :root:not([sizemode="fullscreen"]) #tabbrowser-tabs {
         padding-inline-start: 10px !important;
     }
