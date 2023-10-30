@@ -33,3 +33,189 @@
 /* ############# Your Personal File ##############  */
 
 @import url('components/ogx_tricks.css');
+/*makes the dropdown search bar neon colors and a bit transparent*/
+/*autocomplete dropdown rounded style*/
+#PopupAutoComplete>richlistbox>richlistitem {
+    border-radius: 4px !important;
+
+}
+
+.autocomplete-richlistbox {
+    margin: 4px !important;
+    color: var(--arrowpanel-color, Field) !important;
+}
+
+
+panel {
+    --panel-border-radius: 4px !important;
+    --panel-border-color: var(--arrowpanel-border-color) !important;
+    --panel-color: var(--arrowpanel-color, Field) !important;
+
+    /*changing panel bgcolor causes issues with middle mouse click scroll icon*/
+}
+
+/* #main-menubar > menu  {border-radius: 4px !important} */
+
+/*toolbar hamburger menu gradient color*/
+#appMenu-fxa-separator {
+    border-image: 1 1 1 1 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+}
+
+/*link hover tooltip custom*/
+#statuspanel-label {
+    -moz-appearance: none !important;
+    color: rgba(255, 255, 255, 0.800000011920929) !important;
+    background-color: #101010 !important;
+    border: 1px solid transparent !important;
+    border-image: 0 0 1 0 linear-gradient(to right, #9f1aff, #9f1aff, #8a46ff, #765dff, #5d7dff, #3e8cff, #1c99ff, #00a5ff, #00b4ff, #00c3ff, #00d0ff, #00ddff) !important;
+
+}
+
+/*tooltip dark theme applied in js via autoconfig. Hits all tooltips*/
+
+/* purple #9400ff */
+/* tab loading icon color */
+.tab-throbber::before {
+    fill: #00DDFF !important;
+    opacity: 1 !important;
+}
+
+
+:root {
+    --toolbar-field-focus-border-color: transparent !important;
+    /*remove default focus ring of url bar */
+    --organizer-outline-color: transparent !important;
+    /*remove default focus ring of search box in library window */
+    --in-content-page-background: #101010 !important;
+}
+
+#urlbar-background,
+#urlbar {
+
+    border-radius: 4px !important;
+    border: transparent !important;
+
+}
+
+#urlbar-background,
+#urlbar:not([focused=true]) {
+    border-radius: 4px !important;
+    border: transparent !important;
+    margin-bottom: 2px !important;
+}
+
+#urlbar:not([focused=true]) {
+    background-image: linear-gradient(to right, rgb(159, 26, 255, 0.7), rgb(159, 26, 255, 0.7), rgb(138, 70, 255, 0.7), rgb(118, 93, 255, 0.7), rgb(93, 125, 255, 0.7), rgb(62, 140, 255, 0.7), rgb(28, 153, 255, 0.7), rgb(0, 165, 255, 0.7), rgb(0, 180, 255, 0.7), rgb(0, 195, 255, 0.7), rgb(0, 208, 255, 0.7), rgb(0, 221, 255, 0.7)) !important;
+    background-size: auto 4px !important;
+    background-repeat: no-repeat !important;
+    background-position: bottom !important;
+}
+
+#urlbar[focused=true] {
+    background-image: linear-gradient(to right, rgb(159, 26, 255, 0.7), rgb(159, 26, 255, 0.7), rgb(138, 70, 255, 0.7), rgb(118, 93, 255, 0.7), rgb(93, 125, 255, 0.7), rgb(62, 140, 255, 0.7), rgb(28, 153, 255, 0.7), rgb(0, 165, 255, 0.7), rgb(0, 180, 255, 0.7), rgb(0, 195, 255, 0.7), rgb(0, 208, 255, 0.7), rgb(0, 221, 255, 0.7)) !important;
+}
+
+#urlbar[focused=true] #urlbar-background {
+    border-radius: 4px !important;
+    border: transparent !important;
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    background-color: rgb(17, 17, 17, 0.7) !important;
+}
+
+#urlbar[open=true] {
+    background-image: linear-gradient(to right, rgb(159, 26, 255, 0.7), rgb(159, 26, 255, 0.7), rgb(138, 70, 255, 0.7), rgb(118, 93, 255, 0.7), rgb(93, 125, 255, 0.7), rgb(62, 140, 255, 0.7), rgb(28, 153, 255, 0.7), rgb(0, 165, 255, 0.7), rgb(0, 180, 255, 0.7), rgb(0, 195, 255, 0.7), rgb(0, 208, 255, 0.7), rgb(0, 221, 255, 0.7)) !important;
+}
+
+#urlbar[open=true] #urlbar-background {
+    border-radius: 4px !important;
+    border: transparent !important;
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    background-color: rgb(17, 17, 17, 0.7) !important;
+}
+
+/* Remove additional buttons from the URL bar, show on hover with smooth transition */
+/*
+#urlbar-input-container>#page-action-buttons {
+	
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+#urlbar-input-container:hover>#page-action-buttons {
+	
+    animation: 300ms delayedFadeIn ease-in-out;
+    opacity: 1;
+}
+
+@keyframes delayedFadeIn {
+    0% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+*/
+
+/* url mask size change */
+/* #urlbar:not([focused])[textoverflow="right"] > #urlbar-input-container > .urlbar-input-box > #urlbar-input {
+	mask-image: linear-gradient(to left, transparent, black 1ch) !important;
+} */
+
+#tabs-newtab-button .toolbarbutton-icon {
+    fill: #9400ff !important;
+}
+
+/*in tab overflow bar*/
+#tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+    fill: #9400ff !important;
+}
+
+#scrollbutton-up .toolbarbutton-icon,
+#scrollbutton-down .toolbarbutton-icon {
+    fill: #9400ff !important;
+}
+
+#alltabs-button {
+    fill: #9400ff !important;
+}
+
+/* remove drag space before 1st tab */
+:root[sizemode="normal"] .titlebar-spacer[type=pre-tabs] {
+
+    display: none !important;
+
+}
+
+#appMenu-popup #appMenu-header-description {
+    filter: blur(4px) !important;
+    transition: filter 350ms ease-out !important;
+    transition-delay: 250ms !important;
+}
+
+#appMenu-popup #appMenu-fxa-label2:hover #appMenu-header-description {
+    filter: blur(0px) !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+
+    #main-window,
+    browser[type="content-primary"],
+    browser[type="content"],
+    tabbrowser#content,
+    #content,
+    browser[type="content"]>html {
+        background: #000000 !important;
+    }
+
+}
