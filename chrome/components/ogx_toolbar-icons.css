@@ -12,12 +12,14 @@
 #nav-bar #back-button image {
     margin-left: 0px !important;
     list-style-image: url("../images/back.svg") !important;
+    fill: red;
 }
 
 /* forward - go button */
 
 #nav-bar #forward-button image {
     list-style-image: url("../images/forward.svg") !important;
+    fill: red;
 }
 
 /* Reload button */
@@ -25,37 +27,118 @@
 #reload-button {
     list-style-image: url("../images/reload.svg") !important;
     animation: none !important;
+    fill: red;
 }
 
 #stop-button {
     list-style-image: url("../images/stop.svg") !important;
     animation: none !important;
+    fill: red;
 }
 
 /* Eliminar animación boton stop-reload */
 
-#stop-button .toolbarbutton-animatable-image, #reload-button .toolbarbutton-animatable-image {
+#stop-button .toolbarbutton-animatable-image,
+#reload-button .toolbarbutton-animatable-image {
     animation-duration: 0ms !important;
 }
 
 /* home button*/
 
 #home-button image {
-    list-style-image: url("../images/home.svg") !important;
+
+    fill: red;
 }
+
+/* sttings button*/
+
+#preferences-button image {
+
+    fill: red;
+}
+
+
+/* passwords button*/
+
+#logins-button image {
+
+    fill: red;
+}
+
+/* history button*/
+
+#history-panelmenu image {
+    fill: red;
+}
+
+/* downloads button*/
+
+#downloads-button image {
+    fill: red;
+}
+
+/* extensions button*/
+
+#unified-extensions-button image {
+    fill: red;
+}
+
+/* application menu button*/
+
+#PanelUI-menu-button image {
+    fill: red;
+}
+
+/* account menu button*/
+
+#fxa-toolbar-menu-button image {
+    fill: red;
+}
+
+/* sidebar button*/
+
+#sidebar-button image {
+    fill: red;
+}
+
+/* otherbookmarks button*/
+
+#OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
+    fill: red;
+}
+
+/* url search button*/
+
+#urlbar:not(.searchButton)>#urlbar-input-container>#identity-box[pageproxystate="invalid"] #identity-icon {
+    fill: red;
+}
+
+/* tab arrow button*/
+
+.toolbarbutton-1>.toolbarbutton-icon,
+.toolbarbutton-1>.toolbarbutton-badge-stack>.toolbarbutton-icon {
+    fill: red;
+}
+
 
 /* Ícono bookmark */
 
-#pageAction-panel-bookmark[starred], #star-button[starred] {
+#pageAction-panel-bookmark[starred],
+#star-button[starred] {
     list-style-image: url("../images/bookmark.svg") !important;
+    fill: red;
 }
 
-#pageAction-panel-bookmark[starred], #star-button-box:is(:hover, [open]) #star-button[starred] {
+#pageAction-panel-bookmark[starred],
+#star-button-box:is(:hover, [open]) #star-button[starred] {
     fill: var(--toolbarbutton-icon-fill) !important;
+    fill: red;
 }
 
-#pageAction-panel-bookmark, #star-button {
+#pageAction-panel-bookmark,
+#star-button {
     list-style-image: url("../images/bookmark-empty.svg") !important;
+    fill: red;
 }
 
 /* Ícono protección contra rastreo */
@@ -63,49 +146,64 @@
 #tracking-protection-icon-container {
     -moz-box-ordinal-group: 2 !important;
     order: 2 !important;
+    fill: red;
 }
 
 #urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container>#tracking-protection-icon-box>#tracking-protection-icon {
     list-style-image: var(--shield-icon-personal) !important;
     fill: var(--general-color) !important;
     opacity: 1 !important;
+    fill: red;
 }
 
-#urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container:hover>#tracking-protection-icon-box>#tracking-protection-icon, #urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container[open="true"]>#tracking-protection-icon-box>#tracking-protection-icon {
+#urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container:hover>#tracking-protection-icon-box>#tracking-protection-icon,
+#urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container[open="true"]>#tracking-protection-icon-box>#tracking-protection-icon {
     fill: var(--toolbarbutton-icon-fill) !important;
+    fill: red;
 }
 
 #urlbar-input-container[pageproxystate="valid"]>#tracking-protection-icon-container>#tracking-protection-icon-box[hasException]>#tracking-protection-icon {
     list-style-image: url(chrome://browser/skin/tracking-protection-disabled.svg) !important;
     fill: var(--buttons-destructive-bgcolor) !important;
+    fill: red;
 }
 
 /* ícono candado */
 
-#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
-    list-style-image: url("../images/security.svg") !important;
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+    fill: red;
 }
+
+
+
+
 
 /* Ícono permisos adicionales */
 
+
 #permissions-granted-icon {
     list-style-image: url("../images/permissions.svg") !important;
+    fill: red;
 }
 
 .desktop-notification-icon {
     list-style-image: url("../images/notification.svg") !important;
+    fill: red;
 }
 
 /* reader mode */
 
 #reader-mode-button>.urlbar-icon {
     list-style-image: url("../images/read-mode.svg") !important;
+    fill: red;
 }
 
 /* ícono de olvidar, clean history on left-sidebar */
 
 #PersonalToolbar #panic-button image {
     list-style-image: url("../images/cleaner.svg") !important;
+    fill: red;
     padding: 1px !important;
 }
 
@@ -121,6 +219,7 @@
     -moz-context-properties: fill !important;
     fill: var(--toolbarbutton-icon-fill) !important;
     opacity: 0.2 !important;
+    fill: red;
 }
 
 #urlbar:not([open=true], [focused=true], :hover) #urlbar-background::after {
@@ -129,9 +228,10 @@
     display: block;
     background-size: 16px 16px !important;
     height: 16px;
-    margin-top: calc( 0px - var(--urlbar-height) + 7px) !important;
+    margin-top: calc(0px - var(--urlbar-height) + 7px) !important;
     margin-right: -7px !important;
     fill: var(--toolbarbutton-icon-fill) !important;
     -moz-context-properties: fill !important;
     opacity: 0.2 !important;
+    fill: red;
 }
