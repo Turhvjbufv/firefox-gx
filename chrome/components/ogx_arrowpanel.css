@@ -11,11 +11,12 @@ slot {
     /* Borde para anuncios emergentes, por ejemplo al instalar un complemento */
     box-shadow: inset 0px 0 0 1px var(--button-active-bgcolor) !important;
     margin-top: 1px !important;
+   -webkit-text-fill-color: aqua;
 }
 
 panelview {    
     background-image: var(--noise-urlbar-personal) !important;
-    border: 1px solid #0c0a10 !important;
+    border: 1px solid #16f13a !important;
     border-image: var(--panel-separator-zap-gradient4) 1 !important;
 }
 
@@ -77,7 +78,10 @@ toolbarseparator {
     border-image: var(--panel-separator-zap-gradient1) 1 !important;
     margin-inline: 6px !important;
 }
-
+menuseparator::before {
+    border-image: var(--panel-separator-zap-gradient1) 1 !important;
+    --panel-separator-margin-horizontal: 8px !important;
+}
 #PlacesToolbarItems toolbarseparator {
     border-image: none !important;
 }
