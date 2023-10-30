@@ -9,7 +9,7 @@ tab:not([pinned]) .tab-context-line {
     margin-bottom: 3px !important;
 }
 
-tab:not([pinned],[selected]) .tab-context-line {
+tab:not([pinned], [selected]) .tab-context-line {
     clip-path: polygon(4px 0%, 22px 0%, 22px 100%, 4px 100%);
     transition-duration: 0ms !important;
 }
