@@ -3,7 +3,7 @@
 
 @media (prefers-color-scheme: dark){
  window, dialog {                                                                            /*Colores varios de paginas de about:addons y about:settings*/
-    --in-content-page-background: #1a1a24 !important;
+    --in-content-page-background: #000000 !important;
     --in-content-primary-button-background: var(--general-color) !important;
     --in-content-primary-button-text-color: white !important;
     --in-content-primary-button-background-hover: var(--button-active-bgcolor) !important;   /*color de los radiobutton (fondo) :hover*/
